@@ -28,7 +28,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
-  },
-  "owner": "fuchsia-for-all"
+    },
+    "owner": "fuchsia-for-all"
+  }
 }
