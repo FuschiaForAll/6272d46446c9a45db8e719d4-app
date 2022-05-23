@@ -44,8 +44,8 @@ type Mutation {
 }
 
 type Subscription {
-  onUserChange: UserSubscriptionPayload
-  onToDoChange: ToDoSubscriptionPayload
+  onUserChange(filter: ModelUserFilterInput): UserSubscriptionPayload
+  onToDoChange(filter: ModelToDoFilterInput): ToDoSubscriptionPayload
 }
 
 input ModelUserFilterInput {
@@ -123,6 +123,18 @@ type ModelUserConnection {
 type ModelToDoConnection {
   items: [ToDo!]!
   nextToken: String
+}
+
+
+type UserSubscriptionPayload {
+  type: String!
+  _ids: [ObjectId!]!
+  items: [User!]!
+}
+type ToDoSubscriptionPayload {
+  type: String!
+  _ids: [ObjectId!]!
+  items: [ToDo!]!
 }
 
 
