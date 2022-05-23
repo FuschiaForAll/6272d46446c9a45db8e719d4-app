@@ -26,8 +26,11 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: Generate code
+      - name: 🏗 Generate code
         run: yarn gen
 
+      - name: 📦 Install expo updates
+        run: expo install expo-updates
+
       - name: 🚀 Publish app
-        run: yes | expo publish --non-interactive
+        run: expo publish --non-interactive
