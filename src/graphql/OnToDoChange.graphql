@@ -1,8 +1,11 @@
 
-subscription OnToDoChange {
-  onToDoChange {
-    _id
-    Description
+subscription OnToDoChange($filter: ModelToDoFilterInput) {
+  onToDoChange(filter: $filter) {
+    type
+    _ids
+    items {
+      Description
+    }
   }
 }
       

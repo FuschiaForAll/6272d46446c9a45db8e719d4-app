@@ -1,10 +1,13 @@
 
-subscription OnUserChange {
-  onUserChange {
-    _id
-    email
+subscription OnUserChange($filter: ModelUserFilterInput) {
+  onUserChange(filter: $filter) {
+    type
+    _ids
+    items {
+      email
 user_type
 asdf
+    }
   }
 }
       
