@@ -1,0 +1,8 @@
+
+mutation UpdateToDo($input: UpdateToDoInput!, $condition: ModelToDoConditionalInput) {
+  updateToDo(input: $input, condition: $condition) {
+    _id
+    Description
+  }
+}
+      

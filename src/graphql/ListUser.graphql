@@ -1,0 +1,13 @@
+
+query ListUser($filter: ModelUserFilterInput, $sortDirection: ModelSortDirection, $limit: Int, $nextToken: String) {
+  listUser(filter: $filter, sortDirection: $sortDirection, limit: $limit, nextToken: $nextToken) {
+    nextToken
+    items {
+      _id
+    email
+user_type
+asdf
+    }
+  }
+}
+      

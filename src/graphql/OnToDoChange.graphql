@@ -1,0 +1,8 @@
+
+subscription OnToDoChange {
+  onToDoChange {
+    _id
+    Description
+  }
+}
+      

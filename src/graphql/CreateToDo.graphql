@@ -1,0 +1,8 @@
+
+mutation CreateToDo($input: CreateToDoInput!, $condition: ModelToDoConditionalInput) {
+  createToDo(input: $input, condition: $condition) {
+    _id
+    Description
+  }
+}
+      

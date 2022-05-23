@@ -1,0 +1,204 @@
+
+type User {
+  _id: ID!
+  email: String!
+  password: String
+  user_type: String
+  asdf: String
+}
+
+
+type ToDo {
+  _id: ID!
+  Description: String
+}
+
+type Query {
+  me: User
+"A Single User"
+  getUser(_id: ID!): User
+"A List of Users"
+  listUser(filter: ModelUserFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelUserConnection
+"A Single ToDo"
+  getToDo(_id: ID!): ToDo
+"A List of ToDos"
+  listToDo(filter: ModelToDoFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelToDoConnection
+}
+
+type Mutation {
+  login(username: String!, password: String!): String
+  logout: Boolean!
+  register(userData: CreateUserInput!): String
+"Create a User"
+  createUser(input: CreateUserInput!, condition: ModelUserConditionalInput): User
+"Update a User"
+  updateUser(input: UpdateUserInput!, condition: ModelUserConditionalInput): User
+"Delete a User"
+  deleteUser(input: DeleteUserInput!, condition: ModelUserConditionalInput): User
+"Create a ToDo"
+  createToDo(input: CreateToDoInput!, condition: ModelToDoConditionalInput): ToDo
+"Update a ToDo"
+  updateToDo(input: UpdateToDoInput!, condition: ModelToDoConditionalInput): ToDo
+"Delete a ToDo"
+  deleteToDo(input: DeleteToDoInput!, condition: ModelToDoConditionalInput): ToDo
+}
+
+type Subscription {
+  onCreateUser: User
+  onUpdateUser: User
+  onDeleteUser: User
+  onCreateToDo: ToDo
+  onUpdateToDo: ToDo
+  onDeleteToDo: ToDo
+}
+
+input ModelUserFilterInput {
+  _id: ModelIDInput
+  email: ModelStringInput
+  password: ModelStringInput
+  user_type: ModelStringInput
+  asdf: ModelStringInput
+  and: [ModelUserFilterInput]
+  or: [ModelUserFilterInput]
+  not: ModelUserFilterInput
+}
+input ModelToDoFilterInput {
+  _id: ModelIDInput
+  Description: ModelStringInput
+  and: [ModelToDoFilterInput]
+  or: [ModelToDoFilterInput]
+  not: ModelToDoFilterInput
+}
+
+
+input ModelUserConditionalInput {
+  _id: ID
+  email: ModelStringInput
+  password: ModelStringInput
+  user_type: ModelStringInput
+  asdf: ModelStringInput
+  and: [ModelUserConditionalInput]
+  or: [ModelUserConditionalInput]
+  not: ModelUserConditionalInput
+}
+input ModelToDoConditionalInput {
+  _id: ID
+  Description: ModelStringInput
+  and: [ModelToDoConditionalInput]
+  or: [ModelToDoConditionalInput]
+  not: ModelToDoConditionalInput
+}
+
+
+input CreateUserInput {
+  email: String!
+  password: String!
+  user_type: String
+  asdf: String
+}
+input CreateToDoInput {
+  Description: String
+}
+
+
+input UpdateUserInput {
+  email: String
+  password: String
+  user_type: String
+  asdf: String
+}
+input UpdateToDoInput {
+  Description: String
+}
+
+
+input DeleteUserInput {
+  _id: ID!
+}
+input DeleteToDoInput {
+  _id: ID!
+}
+
+
+type ModelUserConnection {
+  items: [User!]!
+  nextToken: String
+}
+type ModelToDoConnection {
+  items: [ToDo!]!
+  nextToken: String
+}
+
+
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}

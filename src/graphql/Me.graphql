@@ -1,0 +1,10 @@
+
+query Me {
+  me {
+    _id
+    email
+user_type
+asdf
+  }
+}
+    

@@ -1,0 +1,8 @@
+
+mutation DeleteToDo($input: DeleteToDoInput!, $condition: ModelToDoConditionalInput) {
+  deleteToDo(input: $input, condition: $condition) {
+    _id
+    Description
+  }
+}
+      
