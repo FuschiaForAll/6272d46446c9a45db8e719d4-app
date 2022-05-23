@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-        
+
       - name: Generate code
         run: yarn gen
 
