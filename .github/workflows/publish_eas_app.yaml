@@ -30,4 +30,4 @@ jobs:
         run: yarn gen
 
       - name: 🚀 Publish app
-        run: expo publish --non-interactive
+        run: yes | expo publish --non-interactive
