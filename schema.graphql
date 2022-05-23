@@ -210,3 +210,6 @@ enum ModelSortDirection {
   ASC
   DESC
 }
+
+
+scalar ObjectId
