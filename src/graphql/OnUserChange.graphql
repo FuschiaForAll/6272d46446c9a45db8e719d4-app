@@ -1,0 +1,10 @@
+
+subscription OnUserChange {
+  onUserChange {
+    _id
+    email
+user_type
+asdf
+  }
+}
+      

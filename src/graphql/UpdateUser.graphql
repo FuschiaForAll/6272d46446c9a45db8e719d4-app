@@ -1,0 +1,10 @@
+
+mutation UpdateUser($input: UpdateUserInput!, $condition: ModelUserConditionalInput) {
+  updateUser(input: $input, condition: $condition) {
+    _id
+    email
+user_type
+asdf
+  }
+}
+      

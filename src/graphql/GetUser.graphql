@@ -1,0 +1,10 @@
+
+query GetUser($_id: ID!) {
+  getUser(_id: $_id) {
+    _id
+    email
+user_type
+asdf
+  }
+}
+      

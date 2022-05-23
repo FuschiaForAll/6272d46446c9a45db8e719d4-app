@@ -1,0 +1,33 @@
+name: Publish to EAS
+
+on:
+  push:
+    branches:
+      - deploy
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: yarn
+
+      - name: Setup Expo
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: latest
+          token: ${{ secrets.EXPOTOKEN }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Generate code
+        run: yarn gen
+
+      - name: Publish app
+        run: expo publish --non-interactive

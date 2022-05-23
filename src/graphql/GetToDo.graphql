@@ -1,0 +1,8 @@
+
+query GetToDo($_id: ID!) {
+  getToDo(_id: $_id) {
+    _id
+    Description
+  }
+}
+      

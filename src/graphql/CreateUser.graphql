@@ -1,0 +1,10 @@
+
+mutation CreateUser($input: CreateUserInput!, $condition: ModelUserConditionalInput) {
+  createUser(input: $input, condition: $condition) {
+    _id
+    email
+user_type
+asdf
+  }
+}
+      

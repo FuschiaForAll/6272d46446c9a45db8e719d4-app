@@ -1,0 +1,10 @@
+
+mutation DeleteUser($input: DeleteUserInput!, $condition: ModelUserConditionalInput) {
+  deleteUser(input: $input, condition: $condition) {
+    _id
+    email
+user_type
+asdf
+  }
+}
+      

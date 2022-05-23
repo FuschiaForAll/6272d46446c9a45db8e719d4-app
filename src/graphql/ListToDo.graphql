@@ -1,0 +1,11 @@
+
+query ListToDo($filter: ModelToDoFilterInput, $sortDirection: ModelSortDirection, $limit: Int, $nextToken: String) {
+  listToDo(filter: $filter, sortDirection: $sortDirection, limit: $limit, nextToken: $nextToken) {
+    nextToken
+    items {
+      _id
+    Description
+    }
+  }
+}
+      
