@@ -44,12 +44,8 @@ type Mutation {
 }
 
 type Subscription {
-  onCreateUser: User
-  onUpdateUser: User
-  onDeleteUser: User
-  onCreateToDo: ToDo
-  onUpdateToDo: ToDo
-  onDeleteToDo: ToDo
+  onUserChange: UserSubscriptionPayload
+  onToDoChange: ToDoSubscriptionPayload
 }
 
 input ModelUserFilterInput {
