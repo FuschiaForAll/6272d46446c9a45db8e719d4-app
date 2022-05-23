@@ -1,5 +1,5 @@
 
-import App from './src';
+import App from './src/App';
 
 export default App;
   
