@@ -32,6 +32,7 @@ Alert.alert("Failed to login");
                <Text properties={{"text":"Login"}} style={{"color":"#f8e71c","display":"inline","position":"initial","font":{"size":"12","style":"normal","weight":"weight","textAlign":"center","textTransform":"none","lineHeight":"1em"},"alignSelf":"center"}} />
             </Button>
          </Container>
+         <Container style={{"borderRadius":5,"backgroundColor":"#7ed321","display":"flex","position":"initial","padding":{"left":"10","right":"10","top":"10","bottom":"10"},"flexContainer":{},"margin":{"left":"20","right":"20","top":"20","bottom":"20"}}} />
       </Screen>
    )
 }
