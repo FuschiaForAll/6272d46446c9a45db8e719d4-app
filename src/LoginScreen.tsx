@@ -7,7 +7,7 @@ export function LoginScreen () {
 
    return (
       <Screen>
-         <Container style={{"height":150,"borderRadius":5,"backgroundColor":"#f8e71c","display":"flex","position":"initial","margin":{"left":"10","right":"10","top":"10","bottom":"10"},"padding":{"left":"0"}}} >
+         <Container style={{"height":150,"borderRadius":5,"backgroundColor":"#f8e71c","display":"flex","position":"initial","margin":{"left":10,"right":10,"top":10,"bottom":10},"padding":{"left":0}}} >
             <Text properties={{"text":"Lorem Ipsum"}} style={{"height":24,"width":160,"color":"#000000","display":"inline","position":"initial"}} />
             <TextInput text={{ value: UsernameTextInputtext, onChange: setUsernameTextInputtext}} properties={{"placeholder":"Enter...","text":"undefined"}} style={{"height":24,"width":160,"color":"#000","borderColor":"#000","borderStyle":"solid","borderWidth":1,"borderRadius":5}} />
             <Text properties={{"text":"Lorem Ipsum"}} style={{"height":24,"width":160,"color":"#000000","display":"inline","position":"initial"}} />
