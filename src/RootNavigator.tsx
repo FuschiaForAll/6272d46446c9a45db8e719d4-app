@@ -1,18 +1,18 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { Screen } from './Screen'
+import { LoginScreen } from './LoginScreen'
 type RootStackNavigator = {
-   Screen: undefined,
+   LoginScreen: undefined,
 }
 const Stack = createStackNavigator<RootStackNavigator>();
 export function RootNavigator() {
    return (
-      <Stack.Navigator initialRouteName="Screen" screenOptions={{
+      <Stack.Navigator initialRouteName="LoginScreen" screenOptions={{
         headerShown: false,
         gestureEnabled: true,
         animationEnabled: false,
       }}>
-         <Stack.Screen name="Screen" component={Screen} />
+         <Stack.Screen name="LoginScreen" component={LoginScreen} />
       </Stack.Navigator>
    )
 }
