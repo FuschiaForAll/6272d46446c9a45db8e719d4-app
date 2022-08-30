@@ -10,7 +10,7 @@ export function LoginScreen () {
    const [PasswordTextInputtext, setPasswordTextInputtext] = useState<string>()
    const [login] = useLoginMutation()
    const navigate = useNavigation<any>()
-async function ButtononPress() {
+async function Button_onPress() {
 const success = await login({ variables: { username: ``, password: ``}});
 if (success.data) {
 await AsyncStorage.setItem('authToken', success.data.login);
@@ -28,7 +28,7 @@ Alert.alert("Failed to login");
             <TextInput text={{ value: UsernameTextInputtext, onChange: setUsernameTextInputtext}} properties={{"placeholder":"Enter...","text":"undefined"}} style={{"height":24,"width":160,"color":"#000","borderColor":"#000","borderStyle":"solid","borderWidth":1,"borderRadius":5}} />
             <Text properties={{"text":"Lorem Ipsum"}} style={{"height":24,"width":160,"color":"#000000","display":"inline","position":"initial"}} />
             <TextInput text={{ value: PasswordTextInputtext, onChange: setPasswordTextInputtext}} properties={{"placeholder":"Enter...","text":"undefined"}} style={{"height":24,"width":160,"color":"#000","borderColor":"#000","borderStyle":"solid","borderWidth":1,"borderRadius":5}} />
-            <Button properties={{"title":"Lorem Ipsum"}} style={{"height":35,"width":175,"backgroundColor":"#417505","borderRadius":5,"display":"flex","position":"initial","placement":"initial"}} actions={{"onPress":"ButtononPress"}} >
+            <Button properties={{"title":"Lorem Ipsum"}} style={{"height":35,"width":175,"backgroundColor":"#417505","borderRadius":5,"display":"flex","position":"initial","placement":"initial"}} actions={{"onPress":"Button_onPress"}} >
                <Text properties={{"text":"Lorem Ipsum"}} style={{"height":24,"width":160,"color":"#ffffff","display":"inline","position":"initial"}} />
             </Button>
          </Container>
